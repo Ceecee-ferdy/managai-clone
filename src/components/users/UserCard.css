@@ -1,0 +1,130 @@
+.user-card{
+    flex:0 0 310px;
+
+    background:#fff;
+
+    border:1px solid #e5e7eb;
+    border-radius:28px;
+
+    padding:24px;
+
+    display:flex;
+    flex-direction:column;
+
+    transition:all .35s ease;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+    scroll-snap-align: start; 
+}
+
+.who-can-use-number {
+  color: rgb(8, 15, 26);
+  font-family: RoobertTrial, sans-serif;
+  margin: 0;
+}
+
+.who-can-use-icon {
+  margin-top: 35px;
+}
+
+.who-can-use-card-content {
+  margin-top: 35px;
+}
+
+.who-can-use-card-content h4 {
+  color: rgb(8, 15, 26);
+  font-family: RoobertTrial, sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  margin-top: 16px;
+}
+
+.who-can-use-card-content p {
+  color: rgb(107, 114, 128);
+  font-family: RoobertTrial, sans-serif;
+  font-size: 15px;
+ font-weight: 400;
+  line-height: normal;
+
+  margin-top: 12px;
+}
+
+@media (max-width: 479px) {
+
+  .user-card {
+    flex: 0 0 280px;
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .who-can-use-icon {
+    margin-top: 30px;
+  }
+
+  .who-can-use-card-content {
+    margin-top: 30px;
+  }
+
+  .who-can-use-card-content h4 {
+    font-size: 20px;
+  }
+
+  .who-can-use-card-content p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+  .user-card {
+    flex: 0 0 300px;
+    padding: 22px;
+    border-radius: 26px;
+  }
+
+  .who-can-use-icon {
+    margin-top: 32px;
+  }
+
+  .who-can-use-card-content {
+    margin-top: 32px;
+  }
+
+  .who-can-use-card-content h4 {
+    font-size: 21px;
+  }
+
+  .who-can-use-card-content p {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .user-card {
+    flex: 0 0 280px;
+    padding: 22px;
+    border-radius: 26px;
+  }
+
+  .who-can-use-number {
+    font-size: 15px;
+  }
+
+  .who-can-use-icon {
+    margin-top: 30px;
+  }
+
+  .who-can-use-card-content {
+    margin-top: 30px;
+  }
+
+  .who-can-use-card-content h4 {
+    font-size: 20px;
+  }
+
+  .who-can-use-card-content p {
+    font-size: 14px;
+  }
+}

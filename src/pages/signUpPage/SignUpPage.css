@@ -1,0 +1,33 @@
+.signup-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(
+    170deg,
+    #f8fbff 0%,
+    #edf4ff 45%,
+    #f8fbff 100%
+  );
+}
+
+.signup-container {
+  max-width: 1320px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .signup-page {
+    padding: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .signup-container {
+    grid-template-columns: minmax(0, 560px) 1fr;
+  }
+}

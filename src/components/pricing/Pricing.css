@@ -1,0 +1,84 @@
+.pricing {
+  background-image: url("/images/pricing-gradient.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  color: white;
+
+  padding: 36px 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.pricing-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pricing-badge {
+  padding: 8px 16px;
+  border-radius: 8px;
+  width: fit-content;
+
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 300;
+
+  background-color: #0069FE;
+  color: white;
+}
+
+.pricing-heading h1 {
+  width: 80%;
+  margin: 0 auto;
+
+  text-align: center;
+
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+
+  width: 100%;
+}
+
+
+
+@media (min-width: 640px) {
+  .pricing-heading h1 {
+    font-size: 54px;
+  }
+
+  .pricing-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pricing {
+    padding: 75px 35px;
+    gap: 56px;
+  }
+
+   .pricing-heading h1 {
+    width: 60%;
+  }
+
+   .pricing-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

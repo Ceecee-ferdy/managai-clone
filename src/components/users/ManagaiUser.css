@@ -1,0 +1,243 @@
+.managai-users {
+ padding: 0 35px;
+ margin-top: 100px;
+}
+
+.user-grid {
+ 
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 48px;
+  
+}
+
+.user-heading {
+  width: 410px;
+ margin-left: 35px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-subheading {
+  width: fit-content;
+  background-color: #adcdfb;
+  padding: 5px 12px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+
+.user-subheading p {
+  font-size: 12px;
+  font-weight: 500;
+  color: #1077fe;
+}
+
+.user-heading h1 {
+  width: 330px;
+  font-size: 54px;
+  line-height: normal;
+  font-weight: 600;
+  font-family: RoobertTRIAL, sans-serif;
+  color: rgb(8, 15, 26);
+  margin-top: 16px;
+}
+
+.user-description {
+  width: 330px;
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: normal;
+   font-family: RoobertTRIAL, sans-serif;
+  color: rgb(107, 114, 128);
+ 
+}
+
+.who-can-use-cards-viewport {
+  width: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  display: flex;
+  align-items: stretch;
+}
+
+.who-can-use-cards-track{
+    display:flex;
+    gap: 24px;
+    width:max-content;
+    padding-right: 175px;
+
+    transition:transform .45s ease;
+}
+
+
+.navigation-button {
+    margin-top: 40px;
+     display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+
+    margin-right: 35px;
+}
+
+.user-btn {
+  padding: 12px 22px;
+  border-radius: 7px;
+  background-color: rgb(0, 105, 254);
+  border: none;
+  color: #fff;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+
+.user-btn:disabled {
+  background-color: #0069FE;
+  color: #fff;
+  cursor: default;
+  transform: none;
+  opacity: 0.35;
+}  
+
+
+@media (max-width: 479px) {
+
+  .managai-users {
+    padding: 55px 15px;
+  }
+
+  .user-grid {
+    flex-direction: column;
+  }
+
+  .user-heading {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .user-heading h1 {
+    font-size: 42px;
+  }
+
+  .user-description {
+    font-size: 15px;
+  }
+
+  .who-can-use-cards-viewport {
+    margin-top: 40px;
+  }
+
+  .who-can-use-cards-track {
+    gap: 20px;
+    padding-right: 35px;
+  }
+
+  .navigation-button {
+    margin-top: 40px;
+  }
+
+  .user-btn {
+    padding: 10px 18px;
+  }
+}
+
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+  .managai-users {
+    padding: 65px 20px;
+  }
+
+  .user-grid {
+    flex-direction: column;
+    gap: 45px;
+  }
+
+  .user-heading {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .user-heading h1 {
+    width: auto;
+    font-size: 48px;
+  }
+
+  .user-description {
+    width: auto;
+    font-size: 16px;
+  }
+
+  .who-can-use-cards-viewport {
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .who-can-use-cards-track {
+    gap: 24px;
+    padding-right: 60px;
+  }
+
+  .navigation-button {
+    margin-top: 40px;
+    margin-right: 0;
+  }
+
+  .user-btn {
+    padding: 11px 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .managai-users {
+   padding: 75px 25px;
+  }
+
+  .user-grid {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .user-heading {
+    width: 300px;
+    margin-left: 0;
+    flex-shrink: 0;
+  }
+
+  .user-heading h1 {
+    width: 280px;
+    font-size: 46px;
+  }
+
+  .user-description {
+    width: 280px;
+    font-size: 15px;
+  }
+
+  .who-can-use-cards-viewport {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .who-can-use-cards-track {
+    gap: 20px;
+    padding-right: 60px;
+  }
+
+  .navigation-button {
+    margin-top: 35px;
+    margin-right: 0;
+  }
+
+  .user-btn {
+    padding: 11px 20px;
+  }
+}

@@ -1,0 +1,137 @@
+.business-owners {
+ padding: 150px 35px 50px;
+  display: flex;
+  gap: 2.5rem;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+
+.business-heading {
+  width: 540px;
+}
+
+.business-subheading {
+  width: fit-content;
+  background-color: #adcdfb;
+  padding: 5px 14px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.business-subheading p {
+  font-size: 13px;
+  font-weight: 400;
+  color: #1077fe;
+}
+
+.business-heading h2 {
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #080f1a;
+  margin: 0 0 15px;
+}
+
+.business-description {
+  color: #747b89;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.business-cta {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.business-media img {
+  width: 100%;
+  max-width: 434px;
+  height: auto;
+}
+
+
+
+/* Tablet and mobile */
+@media (max-width: 767px) {
+  .business-owners {
+    padding: 70px 20px;
+    flex-direction: column;
+    gap: 40px;
+    align-items: stretch;
+  }
+
+  .business-heading {
+    width: 100%;
+  }
+
+  .business-subheading {
+    margin-bottom: 12px;
+  }
+
+  .business-subheading p {
+    font-size: 11px;
+  }
+
+  .business-heading h2 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .business-description {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .business-cta {
+    font-size: 13px;
+    padding: 9px 14px;
+  }
+
+  .business-media {
+    width: 100%;
+  }
+
+  .business-media img {
+    width: 100%;
+    max-width: 434px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1028px) {
+  .business-owners {
+    padding: 100px 25px 50px;
+    gap: 2rem;
+  }
+
+  .business-heading {
+    width: 50%;
+  }
+
+  .business-heading h2 {
+    font-size: 32px;
+  }
+
+  .business-description {
+    font-size: 14px;
+  }
+
+  .business-media {
+    width: 45%;
+  }
+
+  .business-media img {
+    width: 100%;
+    max-width: 434px;
+  }
+}

@@ -1,0 +1,135 @@
+.review-card {
+
+  max-width: 564px;
+  width: 100%;
+  padding-right: 58px;
+  margin-left: 30px;
+}
+
+.testimonial-title {
+
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.testimonial-review {
+  margin-top: 16px;
+  color: #6B7280;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 480px;
+}
+
+.progress-bar {
+  margin-top: 24px;
+  height: 4px;
+  background: #DDE4ED;
+  position: relative;
+  border-radius: 999px;
+  overflow: hidden;
+}
+/*
+.progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #0069FE;
+  border-radius: 999px;
+} */
+
+.progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #0069FE;
+  border-radius: 999px;
+
+  transition: width 0.1s linear;
+}
+
+@media (max-width: 479px) {
+
+  .review-card {
+    max-width: 100%;
+    width: 100%;
+   margin: 20px 15px 15px;
+  }
+
+  .testimonial-title {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .testimonial-review {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  .progress-bar {
+    margin-top: 20px;
+  }
+
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .review-card {
+    max-width: 100%;
+    width: 100%;
+    margin: 80px 15px 15px;
+  }
+
+  .testimonial-title {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .testimonial-review {
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  .progress-bar {
+    margin-top: 22px;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .review-card {
+    max-width: 500px;
+    width: 100%;
+    padding-right: 0;
+    margin-left: 0;
+  }
+
+  .testimonial-title {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+
+  .testimonial-review {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 480px;
+  }
+
+  .progress-bar {
+    margin-top: 24px;
+  }
+}
+
+
+
+/*
+@media (min-width: 640px) {
+  .testimonial-title {
+    font-size: 28px;
+  }
+} */

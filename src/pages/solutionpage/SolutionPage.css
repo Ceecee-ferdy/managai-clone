@@ -1,0 +1,203 @@
+.solution-page {
+  padding: 48px 20px 80px;
+}
+
+.solution-container {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  padding: 32px;
+
+  border: 1px solid #d7e1ef;
+  border-radius: 24px;
+
+  background: #fff;
+}
+
+/* ================================
+   CATEGORY
+================================ */
+
+.solution-category {
+  margin: 0;
+
+  color: #6f7f96;
+
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 400;
+
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+/* ================================
+   TITLE
+================================ */
+
+.solution-container h1 {
+  margin: 16px 0 0;
+
+  color: #080f1a;
+
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+/* ================================
+   DESCRIPTION
+================================ */
+
+.solution-description {
+  max-width: 820px;
+
+  margin: 20px 0 0;
+
+  color: #58667b;
+
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* ================================
+   FEATURE CARDS
+================================ */
+
+.solution-features {
+  margin-top: 32px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.solution-feature-card {
+  padding: 20px;
+
+  border: 1px solid #e4ecf9;
+  border-radius: 16px;
+
+  background: #f5f8fd;
+}
+
+.solution-feature-card h2 {
+  margin: 0;
+
+  color: #080f1a;
+
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.solution-feature-card p {
+  margin: 8px 0 0;
+
+  color: #58667b;
+
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
+.solution-actions {
+  margin-top: 40px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  
+}
+
+.solution-start-button,
+.solution-features-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 16px;
+
+  border-radius: 12px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+
+  box-sizing: border-box;
+}
+
+.solution-start-button {
+  background: #0469ff;
+  color: #fff;
+
+  box-shadow: 0 12px 24px -20px rgba(4, 30, 66, 0.8);
+}
+
+.solution-features-button {
+  background: #fff;
+  color: #080f1a;
+
+  box-shadow: 0 12px 24px -20px rgba(4, 30, 66, 0.8);
+}
+
+.solution-start-button:hover,
+.solution-start-button:focus-visible {
+  color: #fff;
+}
+
+.solution-features-button:hover,
+.solution-features-button:focus-visible {
+  color: #080f1a;
+}
+
+/* ================================
+   DESKTOP
+================================ */
+
+@media (min-width: 1024px) {
+  .solution-page {
+    padding: 80px 40px;
+  }
+
+  .solution-container {
+    padding: 48px;
+  }
+
+  .solution-container h1 {
+    font-size: 48px;
+  }
+
+  .solution-features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+  .solution-page {
+    padding: 32px 20px 60px;
+  }
+
+  .solution-container {
+    padding: 24px;
+  }
+
+  .solution-container h1 {
+    font-size: 30px;
+  }
+
+  .solution-features {
+    grid-template-columns: 1fr;
+  }
+}

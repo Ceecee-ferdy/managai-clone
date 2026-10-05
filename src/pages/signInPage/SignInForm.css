@@ -1,0 +1,454 @@
+
+.sign-in-form-card {
+  border: 1px solid #d7e1ef;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  box-shadow: 0 28px 72px -44px rgba(4, 30, 66, 0.55);
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ========================================
+   FORM HEADER
+======================================== */
+
+.sign-in-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.sign-in-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+
+  text-decoration: none;
+  color: #08172b;
+}
+
+.sign-in-brand h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -1.2px;
+}
+
+.sign-in-logo {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  background: #0469ff;
+  color: #fff;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sign-in-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.secure-session {
+  display: none;
+
+  padding: 6px 10px;
+  border: 1px solid #d7e1ef;
+  border-radius: 999px;
+
+  color: #58667b;
+  font-size: 12px;
+}
+
+.language-selector {
+    height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 0 12px;
+
+    border: 1px solid #d7e1ef;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.8);
+    color: #23364d;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow: 0 1px 2px rgba(4, 30, 66, 0.08);
+
+    cursor: pointer;
+}
+
+.language-selector svg {
+    width: 16px;
+    height: 16px;
+}
+
+.language-icon {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #eaf2ff;
+    color: #0069fe;
+}
+
+.language-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+
+.language-arrow {
+    width: 16px;
+    height: 16px;
+    color: #7d8da4;
+}
+
+/* ========================================
+   MOBILE WORKSPACE
+======================================== */
+
+.mobile-workspace-box {
+  margin-bottom: 20px;
+  padding: 16px;
+
+  border: 1px solid #d7e1ef;
+  border-radius: 16px;
+  background: #f3f6fc;
+}
+
+.mobile-workspace-box p {
+  margin: 0;
+  color: #58667b;
+  font-size: 13px;
+}
+
+.mobile-workspace-box h3 {
+  margin: 5px 0;
+  color: #080f1a;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+
+/* ========================================
+   FORM CONTENT
+======================================== */
+
+.sign-in-content {
+  width: 100%;
+  padding: 0 4px;
+}
+
+.sign-in-intro {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e8eef8;
+}
+
+.sign-in-intro h1 {
+  margin: 0;
+  color: #080f1a;
+  font-size: 27px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+}
+
+.sign-in-intro > p {
+  margin: 8px 0 0;
+  color: #58667b;
+  font-size: 16px;
+}
+
+.secure-form-box {
+  margin-top: 16px;
+  padding: 10px 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  border: 1px solid #e8eef8;
+  border-radius: 12px;
+  background: #f8fbff;
+
+  color: #58667b;
+  font-size: 12px;
+}
+
+.secure-form-box-left {
+  color: #2f5f95;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.secure-form-box-right {
+  color: #7d8da4;
+  font-size: 12px;
+}
+
+
+
+/* ========================================
+   INPUTS
+======================================== */
+
+.sign-in-fields {
+  padding-top: 20px;
+}
+
+.sign-in-fields form {
+  width: 100%;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 7px;
+
+  color: #080f1a;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-field input {
+  width: 100%;
+  min-height: 48px;
+
+  padding: 0 14px;
+
+  border: 1px solid #d7e1ef;
+  border-radius: 12px;
+  outline: none;
+
+  background: #fff;
+  color: #080f1a;
+
+  font: inherit;
+  font-size: 14px;
+
+  box-sizing: border-box;
+}
+
+.form-field input::placeholder {
+  color: #9aa7b8;
+}
+
+.form-field input:focus {
+  border-color: #0469ff;
+  box-shadow: 0 0 0 3px rgba(4, 105, 255, 0.1);
+}
+
+
+/* ========================================
+   PASSWORD FIELD
+======================================== */
+
+.password-field {
+  position: relative;
+}
+
+.password-field input {
+  padding-right: 48px;
+}
+
+.password-field button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+
+  width: 32px;
+  height: 32px;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  background: transparent;
+  color: #58667b;
+
+  cursor: pointer;
+}
+
+.password-field button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.input-error {
+  border-color: #ef4444 !important;
+}
+
+.input-error-message {
+  color: #ef4444;
+  font-size: 12px;
+}
+
+
+/* ========================================
+   LOGIN STATUS BOX
+======================================== */
+
+.form-status-box {
+  margin-top: 8px;
+  padding: 12px;
+
+  border: 1px solid #e8eef8;
+  border-radius: 16px;
+  background: #f8fbff;
+}
+
+.form-status-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 10px;
+
+  color: #58667b;
+  font-size: 12px;
+}
+
+.form-status-box > button {
+  width: 100%;
+  min-height: 46px;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: rgb(53, 136, 255);
+  color: #fff;
+
+  font: inherit;
+  font-weight: 600;
+
+  opacity: 0.6;
+  cursor: default;
+}
+
+
+/* ========================================
+   EMPLOYEE SIGN IN
+======================================== */
+
+.employee-sign-in {
+  padding: 0 8px;
+  margin-top: 20px;
+}
+
+.employee-sign-in a {
+  width: 100%;
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: 1px solid #d7e1ef;
+  border-radius: 12px;
+
+  background: #fff;
+  color: #0a468f;
+  font: inherit;
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.employee-sign-in a svg {
+  width: 18px;
+  height: 18px;
+}
+
+
+/* ========================================
+   BOTTOM LINKS
+======================================== */
+
+.sign-in-link-text {
+  margin: 20px 0 0;
+
+  text-align: center;
+
+  color: #080f1a;
+  font-size: 14px;
+}
+
+.sign-in-link-text a {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sign-in-link-text a:hover {
+  text-decoration: underline;
+}
+
+.sign-in-link-text.forgot-password {
+  margin-top: 8px;
+}
+
+
+/* ========================================
+   FORM RESPONSIVE
+======================================== */
+
+@media (min-width: 640px) {
+  .sign-in-form-card {
+    padding: 28px;
+  }
+
+  .sign-in-intro h1 {
+    font-size: 34px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sign-in-form-card {
+    padding: 32px;
+  }
+
+  .mobile-workspace-box {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .secure-session {
+    display: inline-flex;
+  }
+}

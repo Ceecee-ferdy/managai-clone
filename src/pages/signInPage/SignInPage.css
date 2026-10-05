@@ -1,0 +1,37 @@
+
+.sign-in-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(
+    170deg,
+    #f8fbff 0%,
+    #edf4ff 45%,
+    #f8fbff 100%
+  );
+}
+
+.sign-in-layout {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+
+/* ========================================
+   DESKTOP LAYOUT
+======================================== */
+
+@media (min-width: 1024px) {
+  .sign-in-page {
+    padding: 16px;
+  }
+
+  .sign-in-layout {
+    grid-template-columns: minmax(0, 560px) 1fr;
+  }
+}

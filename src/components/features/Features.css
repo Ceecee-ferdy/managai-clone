@@ -1,0 +1,220 @@
+.features{
+   padding: 0 35px;
+} 
+
+.features-viewport{
+    width:100%;
+   overflow: hidden;
+    scroll-behavior: smooth;
+   scroll-snap-type: x mandatory; 
+}
+
+
+.features-track{
+    display:flex;
+    gap: 24px;
+
+    width:max-content;
+
+
+    padding-right: 324px;
+}
+
+.features-heading{
+    max-width: 700px;
+    margin: 0 auto 70px;
+    text-align:center;
+}
+
+.features-subheading{
+  width: fit-content;
+  margin: 0 auto;
+  background-color: #adcdfb;
+  padding: 5px 12px;
+  border-radius: 8px;
+
+}
+
+
+.features-heading p{
+    margin:0;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    text-transform:uppercase;
+
+    color: #1077fe;
+}
+
+.features-heading h2{
+    margin-top:18px;
+
+    font-size:54px;
+
+    font-weight:700;
+
+    color:#080f1a;
+}
+
+
+
+.features-navigation {
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.feature-left {
+    padding: 12px 22px;
+    border-radius: 7px;
+}
+
+.feature-right {
+    padding: 12px 35px;
+    border-radius: 7px;
+   
+}
+
+.feature-btn {
+  border: none;
+
+  background: #000;
+  color: #fff;
+  font-weight: 500;
+
+  cursor: pointer;
+
+
+}
+
+
+.feature-btn:disabled {
+  background: #606265;
+  color: #dadada;
+  cursor: default;
+  transform: none;
+  opacity: 0.35;
+}
+
+@media (max-width: 992px) {
+
+    .features {
+        padding: 0 25px;
+    }
+
+    .feature-card {
+        flex: 0 0 340px;
+    }
+
+    .features-heading h2 {
+        font-size: 42px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .features {
+        padding: 0 20px;
+    }
+
+    .features-heading {
+        margin-bottom: 50px;
+    }
+
+    .features-heading h2 {
+        font-size: 34px;
+    }
+
+    .feature-card {
+        flex: 0 0 280px;
+    }
+
+    .features-navigation {
+        margin-top: 35px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .features {
+        padding: 0 15px;
+    }
+
+    .feature-card {
+        flex: 0 0 250px;
+    }
+
+    .features-heading h2 {
+        font-size: 28px;
+    }
+
+    .features-heading p {
+        font-size: 12px;
+    }
+
+}
+
+/*
+
+@media (max-width:480px){
+
+    .feature-card{
+        flex:0 0 250px;
+    }
+
+    .features-heading h2{
+        font-size:28px;
+    }
+
+    .features-heading p{
+        font-size:12px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .features{
+       padding: 0 20px
+    }
+
+    .features-heading{
+        margin-bottom:50px;
+    }
+
+    .features-heading h2{
+        font-size:34px;
+    }
+
+    .feature-card{
+        flex:0 0 280px;
+    }
+
+    .features-navigation{
+        margin-top:35px;
+    }
+
+}
+
+@media (max-width:992px){
+
+    .features{
+       padding: 0 25px;
+    }
+
+    .feature-card{
+        flex:0 0 340px;
+    }
+
+    .features-heading h2{
+        font-size:42px;
+    }
+
+}  */
