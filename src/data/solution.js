@@ -30,7 +30,7 @@ export const solutions = [
   {
   id: crypto.randomUUID(),
   slug: "employee-performance-tracking-software",
-  category: "People operations solution",
+  category: "PEOPLE OPERATIONS SOLUTION",
   title: "Employee Performance Tracking Software",
   description:
     "ManagAI gives you one workspace to track employee delivery, assign goals, and uncover high-impact contributors with AI-assisted analytics.",

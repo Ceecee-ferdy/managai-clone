@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import { BusinessOwnersIllustration } from "../illustrations/BusinessOwnersIllustration";
 import "./BusinessOwners.css";
 
@@ -17,9 +19,9 @@ export function BusinessOwners() {
           Iterate quickly to scale your best experiments
         </p>
 
-        <a href="/sign-up" className="business-start-button">
+        <Link to="/sign-up" className="business-start-button">
           <button className="business-cta">Get started now</button>
-        </a>
+        </Link>
       </div>
 
       <div className="business-media">

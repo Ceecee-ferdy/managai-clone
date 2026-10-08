@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { Icon } from "@iconify/react";
 
 import "./PricingCard.css";
@@ -20,7 +21,7 @@ export function PricingCard({ plan }) {
         <p>{plan.description}</p>
       </div>
 
-      <a href="/sign-up" className="pricing-button-link">
+      <Link to="/sign-up" className="pricing-button-link">
         <button
           className={
             plan.buttonStyle === "popular"
@@ -30,7 +31,7 @@ export function PricingCard({ plan }) {
         >
           Get started
         </button>
-      </a>
+      </Link>
 
       <div className="pricing-divider"></div>
 

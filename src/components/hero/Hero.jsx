@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import heroImage from "../../assets/hero-image.png";
 import "./Hero.css";
 
@@ -13,13 +15,13 @@ export function Hero() {
           progress across every business and project in one workspace.
         </p>
         <div className="hero-actions">
-          <a className="hero-button" href="/sign-up">
+          <Link className="hero-button" to="/sign-up">
             <span className="hero-button-icon">↗</span>
 
             <span className="hero-button-border">
               <span className="hero-button-text">Get Started</span>
             </span>
-          </a>
+          </Link>
         </div>
       </div>
 

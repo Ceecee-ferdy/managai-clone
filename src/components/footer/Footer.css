@@ -3,12 +3,13 @@
   background: #f5f5f5;
   color: #000;
   margin: 0 35px;
+  border-top: 1px solid rgba(136, 136, 136, 0.2);
 }
 
 .footer-container {
  
   padding: 24px 0;
-  border-top: 1px solid rgba(136, 136, 136, 0.2);
+ 
 }
 
 .footer-row {

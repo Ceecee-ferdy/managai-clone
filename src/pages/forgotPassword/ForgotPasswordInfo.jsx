@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import "./forgotPasswordInfo.css";
 
 export function ForgotPasswordInfo() {
@@ -7,10 +8,10 @@ export function ForgotPasswordInfo() {
 
       <div className="forgot-info-content">
         <div className="forgot-info-header">
-          <a href="/" className="forgot-info-brand">
+          <Link to="/" className="forgot-info-brand">
             <span className="forgot-info-logo">M</span>
             <h2>ManagAI</h2>
-          </a>
+          </Link>
 
           <span className="forgot-workspace-label">
             A workspace for your team

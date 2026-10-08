@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 import { Icon } from "@iconify/react";
 import "./SignInForm.css";
 
@@ -24,10 +25,10 @@ export function SignInForm() {
   return (
     <div className="sign-in-form-card">
       <div className="sign-in-form-header">
-        <a href="/" className="sign-in-brand">
+        <Link to="/" className="sign-in-brand">
           <span className="sign-in-logo">M</span>
           <h2>ManagAI</h2>
-        </a>
+        </Link>
 
         <div className="sign-in-header-right">
           <span className="secure-session">Secure Session</span>
@@ -140,20 +141,20 @@ export function SignInForm() {
       </div>
 
       <div className="employee-sign-in">
-        <a href="/">
+        <Link to="/">
           <Icon icon="formkit:people" />
           <span>Sign in as an Employee</span>
-        </a>
+        </Link>
       </div>
 
       <p className="sign-in-link-text">
         Don't have an account?
-        <a href="/sign-up">Sign up here</a>
+        <Link to="/sign-up">Sign up here</Link>
       </p>
 
       <p className="sign-in-link-text forgot-password">
         Forgot Password?
-        <a href="/forgot">Click here</a>
+        <Link to="/forgot">Click here</Link>
       </p>
     </div>
   );

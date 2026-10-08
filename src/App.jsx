@@ -9,6 +9,7 @@ import { TermsPage } from "./pages/termsPage/TermsPage";
 import { SignInPage } from "./pages/signInPage/SignInPage";
 import { ForgotPasswordPage } from "./pages/forgotPassword/ForgotPasswordPage";
 import { SolutionPage } from "./pages/solutionpage/SolutionPage";
+import { PrivacyPage } from "./pages/PrivacyPage";
 import "./App.css";
 
 function App() {
@@ -64,6 +65,17 @@ function App() {
         <Route path="/sign-in" element={<SignInPage />} />
 
         <Route path="/forgot" element={<ForgotPasswordPage />} />
+
+        <Route
+          path="/privacy-policy"
+          element={
+            <>
+              <Header />
+              <PrivacyPage />
+              <Footer />
+            </>
+          }
+        />
 
         <Route
           path="/:slug"

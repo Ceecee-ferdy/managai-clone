@@ -1,6 +1,8 @@
+import { useState } from "react";
+import { Link } from "react-router";
 import { Icon } from "@iconify/react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { useState } from "react";
+
 import "./SignUpForm.css";
 
 export function SignUpForm() {
@@ -53,9 +55,9 @@ export function SignUpForm() {
   return (
     <div className="signup-card">
       <div className="signup-card-header">
-        <a href="/" className="signup-logo">
+        <Link to="/" className="signup-logo">
           ManagAI
-        </a>
+        </Link>
 
         <div className="signup-header-right">
           <span className="secure-session">Secure Session</span>
@@ -310,9 +312,9 @@ export function SignUpForm() {
 
             <span>
               I have read and agree to the{" "}
-              <a href="/terms-and-conditions" target="_blank" rel="noreferrer">
+              <Link to="/terms-and-conditions" target="_blank" rel="noreferrer">
                 Terms and Conditions
-              </a>
+              </Link>
               .
             </span>
           </label>
@@ -332,7 +334,7 @@ export function SignUpForm() {
       </form>
 
       <div className="signin-prompt">
-        <span>Already have an account?</span> <a href="/sign-in">Sign in here</a>
+        <span>Already have an account?</span> <Link to="/sign-in">Sign in here</Link >
       </div>
     </div>
   );

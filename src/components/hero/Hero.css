@@ -107,11 +107,14 @@
 }
 
 .hero-button:hover,
-.hero-button:focus-visible,
-.hero-button:active {
+.hero-button:focus-visible {
   color: #fff;
   text-decoration: none;
   box-shadow: none;
+}
+
+.hero-button:active {
+  border: 2px solid #080f1a;
 }
 
 .hero-actions {
@@ -184,8 +187,8 @@
   }
 
   .hero-description {
-    font-size: 0.95rem;
-    line-height: 1.65;
+     font-size: 1.1rem;
+     line-height: 1.6;
   }
 
   .hero-button {
@@ -199,7 +202,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .hero {
     padding-top: 100px;
   }

@@ -1,4 +1,51 @@
+
+import { Link } from "react-router";
+import { solutions } from "../../data/solutions";
+
 import "./Solutions.css";
+
+export function Solutions() {
+  return (
+    <section className="solutions" id="solutions">
+      <div className="solutions-heading">
+        <div className="solutions-subheading">
+          <p>SOLUTIONS</p>
+        </div>
+
+        <h2>Find the exact ManagAI workflow your team needs</h2>
+
+        <p className="solutions-description">
+          Explore focused solution pages designed for high-intent searches and
+          faster onboarding.
+        </p>
+      </div>
+
+      <div className="solutions-grid">
+        {solutions.map((solution) => (
+          <Link
+            key={solution.id}
+            to={`/${solution.slug}`}
+            className="solution-card"
+          >
+            <span className="solution-category">
+              {solution.category}
+            </span>
+
+            <h3>{solution.title}</h3>
+
+            <p>{solution.description}</p>
+
+            <div className="solution-cta">Explore solution</div>
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+
+
+/* import "./Solutions.css";
 
 export function Solutions() {
   return (
@@ -48,4 +95,4 @@ export function Solutions() {
       </div>
     </section>
   );
-}
+} */

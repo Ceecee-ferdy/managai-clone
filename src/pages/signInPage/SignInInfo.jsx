@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { Icon } from "@iconify/react";
 import "./SignInInfo.css"
 
@@ -8,10 +9,10 @@ export function SignInInfo() {
 
       <div className="sign-in-info-content">
         <div className="sign-in-info-header">
-          <a href="/" className="sign-in-info-brand">
+          <Link to="/" className="sign-in-info-brand">
             <span className="sign-in-info-logo">M</span>
             <h2>ManagAI</h2>
-          </a>
+          </Link>
 
           <span className="workspace-label">
             A workspace for your team
@@ -65,6 +66,7 @@ export function SignInInfo() {
               </h3>
             </div>
           </div>
+          
         </div>
       </div>
     </aside>

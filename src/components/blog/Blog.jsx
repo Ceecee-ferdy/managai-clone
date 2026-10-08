@@ -1,3 +1,4 @@
+import { Link } from "react-router";  
 import { BlogCard } from './BlogCard';
 import { blogs } from '../../data/blogs';
 import './Blog.css';
@@ -25,11 +26,11 @@ export function Blog() {
         ))}
       </div>
 
-       <a href="/blog">
+       <Link to="/blog">
        <button className="blog-cta">
         View all articles  
       </button>
-       </a>
+       </Link>
       
 
     </section>

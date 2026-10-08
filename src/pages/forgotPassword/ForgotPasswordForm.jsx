@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-
+import { Link } from "react-router";
 import { Icon } from "@iconify/react";
 import "./ForgotPasswordForm.css";
 
@@ -26,10 +26,10 @@ export function ForgotPasswordForm() {
   return (
     <div className="forgot-form-card">
       <div className="forgot-form-header">
-        <a href="/" className="forgot-brand">
+        <Link to="/" className="forgot-brand">
           <span className="forgot-logo">M</span>
           <h2>ManagAI</h2>
-        </a>
+        </Link>
 
         <div className="forgot-header-right">
           <span className="forgot-secure-session">Secure Session</span>
@@ -117,7 +117,7 @@ export function ForgotPasswordForm() {
 
       <p className="forgot-login-link">
         Go back to login
-        <a href="/sign-in">Login</a>
+        <Link to="/sign-in">Login</Link>
       </p>
     </div>
   );
