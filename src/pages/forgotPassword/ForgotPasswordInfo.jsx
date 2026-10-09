@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import "./forgotPasswordInfo.css";
+import "./ForgotPasswordInfo.css";
 
 export function ForgotPasswordInfo() {
   return (
