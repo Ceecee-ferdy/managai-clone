@@ -1,4 +1,5 @@
-import { useRef, useState, useEffect } from "react";
+
+import { useRef, useState, useEffect, useCallback } from "react";
 import { FeatureCard } from "./FeatureCard";
 import { features } from "../../data/feature";
 import "./Features.css";
@@ -10,83 +11,95 @@ export function Features() {
   const [expandedFeatureId, setExpandedFeatureId] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [maxTranslate, setMaxTranslate] = useState(0);
-
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
 
-  useEffect(() => {
-    const updateSlider = () => {
-      if (!sliderRef.current || !trackRef.current) return;
+  const getTranslateAmount = useCallback(() => {
+    const track = trackRef.current;
 
-      const viewportWidth = sliderRef.current.clientWidth;
-      const trackWidth = trackRef.current.scrollWidth;
+    if (!track) return 0;
 
-      const maximumMovement = Math.max(0, trackWidth - viewportWidth);
-
-      setMaxTranslate(maximumMovement);
-
-      setIsAtStart(currentIndex === 0);
-
-      const currentMovement = getTranslateAmount();
-
-      setIsAtEnd(currentMovement >= maximumMovement);
-    };
-
-    updateSlider();
-
-    window.addEventListener("resize", updateSlider);
-
-    return () => {
-      window.removeEventListener("resize", updateSlider);
-    };
-  }, [currentIndex, expandedFeatureId]);
-
-  /*
-  const getTranslateAmount = () => {
-    if (!trackRef.current) return 0;
-
-    const item = trackRef.current.querySelector(
-      ".feature-slider-item"
-    );
-
-    if (!item) return 0;
-
-    const itemWidth = item.getBoundingClientRect().width;
-    const gap = 32;
-
-    return currentIndex * (itemWidth + gap);
-  }; */
-
-  const getTranslateAmount = () => {
-    if (!trackRef.current) return 0;
-
-    const items = trackRef.current.querySelectorAll(".feature-slider-item");
+    const items = track.querySelectorAll(".feature-slider-item");
 
     if (!items.length) return 0;
 
     const targetIndex = Math.min(currentIndex, items.length - 1);
+    const trackRect = track.getBoundingClientRect();
+    const itemRect = items[targetIndex].getBoundingClientRect();
 
-    const targetItem = items[targetIndex];
+    return Math.max(0, itemRect.left - trackRect.left);
+  }, [currentIndex]);
 
-    const trackLeft = trackRef.current.getBoundingClientRect().left;
-    const itemLeft = targetItem.getBoundingClientRect().left;
+  const translateAmount = Math.min(getTranslateAmount(), maxTranslate);
 
-    return Math.max(0, itemLeft - trackLeft);
-  };
+  useEffect(() => {
+    const updateSlider = () => {
+      const viewport = sliderRef.current;
+      const track = trackRef.current;
+
+      if (!viewport || !track) return;
+
+      const viewportWidth = viewport.clientWidth;
+      const trackWidth = track.scrollWidth;
+      const maximumMovement = Math.max(0, trackWidth - viewportWidth);
+
+      const items = track.querySelectorAll(".feature-slider-item");
+      const targetIndex = Math.min(currentIndex, items.length - 1);
+
+      let targetMovement = 0;
+
+      if (items.length > 0 && targetIndex >= 0) {
+        const trackRect = track.getBoundingClientRect();
+        const itemRect = items[targetIndex].getBoundingClientRect();
+
+        targetMovement = Math.max(0, itemRect.left - trackRect.left);
+      }
+
+      const clampedMovement = Math.min(targetMovement, maximumMovement);
+
+      setMaxTranslate(maximumMovement);
+      setIsAtStart(clampedMovement <= 2);
+      setIsAtEnd(
+        maximumMovement === 0 ||
+          clampedMovement >= maximumMovement - 2,
+      );
+    };
+
+    updateSlider();
+
+    const resizeObserver = new ResizeObserver(updateSlider);
+
+    if (sliderRef.current) {
+      resizeObserver.observe(sliderRef.current);
+    }
+
+    if (trackRef.current) {
+      resizeObserver.observe(trackRef.current);
+    }
+
+    window.addEventListener("resize", updateSlider);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", updateSlider);
+    };
+  }, [currentIndex, expandedFeatureId]);
 
   const handlePrevious = () => {
-    if (isAtStart) return;
-
-    setCurrentIndex((previousIndex) => previousIndex - 1);
+    setCurrentIndex((previousIndex) => Math.max(0, previousIndex - 1));
   };
 
   const handleNext = () => {
-    if (isAtEnd) return;
+    const items = trackRef.current?.querySelectorAll(".feature-slider-item");
 
-    setCurrentIndex((previousIndex) => previousIndex + 1);
+    if (!items?.length) return;
+
+    const maximumIndex = items.length - 1;
+
+    setCurrentIndex((previousIndex) =>
+      Math.min(maximumIndex, previousIndex + 1),
+    );
   };
-
-  const translateAmount = Math.min(getTranslateAmount(), maxTranslate);
 
   return (
     <section className="features" id="features">
@@ -127,6 +140,7 @@ export function Features() {
           className="feature-btn feature-left"
           onClick={handlePrevious}
           disabled={isAtStart}
+          aria-label="Previous feature"
         >
           {"<"}
         </button>
@@ -135,6 +149,7 @@ export function Features() {
           className="feature-btn feature-right"
           onClick={handleNext}
           disabled={isAtEnd}
+          aria-label="Next feature"
         >
           {">"}
         </button>
@@ -142,3 +157,4 @@ export function Features() {
     </section>
   );
 }
+
