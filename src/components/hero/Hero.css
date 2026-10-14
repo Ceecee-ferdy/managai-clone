@@ -46,22 +46,6 @@
   line-height: 1.5;
 }
 
-.hero-button-icon {
-  width: 43px;
-  height: 43px;
-  flex: none;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-  background: #3588ff;
-  color: #fff;
-
-  font-size: 20px;
-}
-
 .hero-button-border {
   display: inline-flex;
   padding: 2px;

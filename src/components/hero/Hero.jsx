@@ -14,10 +14,9 @@ export function Hero() {
           Use AI to create actionable goals, assign owners, and track team
           progress across every business and project in one workspace.
         </p>
+
         <div className="hero-actions">
           <Link className="hero-button" to="/sign-up">
-            <span className="hero-button-icon">↗</span>
-
             <span className="hero-button-border">
               <span className="hero-button-text">Get Started</span>
             </span>
