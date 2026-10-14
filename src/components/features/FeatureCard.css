@@ -167,7 +167,7 @@
 @media (min-width: 481px) and (max-width: 768px) {
 
     .feature-card {
-        flex-basis: 300px;
+        flex-basis: 334px;
         padding: 24px;
         border-radius: 22px;
     }
@@ -191,7 +191,7 @@
     }
 
     .feature-card-detail-wrapper {
-        flex-basis: 300px;
+        flex-basis: 334px;
 
         padding: 14px;
         border-radius: 22px;
@@ -228,7 +228,7 @@
 @media (max-width: 480px) {
 
     .feature-card {
-        flex-basis: 250px;
+        flex-basis: 334px;
 
         padding: 20px;
         border-radius: 18px;
@@ -263,7 +263,7 @@
     }
 
     .feature-card-detail-wrapper {
-        flex-basis: 250px;
+        flex-basis: 334px;
 
         padding: 12px;
         border-radius: 18px;

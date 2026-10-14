@@ -1,4 +1,3 @@
-
 import { useRef, useState, useEffect } from "react";
 import { FeatureCard } from "./FeatureCard";
 import { features } from "../../data/feature";
@@ -22,10 +21,7 @@ export function Features() {
       const viewportWidth = sliderRef.current.clientWidth;
       const trackWidth = trackRef.current.scrollWidth;
 
-      const maximumMovement = Math.max(
-        0,
-        trackWidth - viewportWidth
-      );
+      const maximumMovement = Math.max(0, trackWidth - viewportWidth);
 
       setMaxTranslate(maximumMovement);
 
@@ -45,6 +41,7 @@ export function Features() {
     };
   }, [currentIndex, expandedFeatureId]);
 
+  /*
   const getTranslateAmount = () => {
     if (!trackRef.current) return 0;
 
@@ -58,6 +55,23 @@ export function Features() {
     const gap = 32;
 
     return currentIndex * (itemWidth + gap);
+  }; */
+
+  const getTranslateAmount = () => {
+    if (!trackRef.current) return 0;
+
+    const items = trackRef.current.querySelectorAll(".feature-slider-item");
+
+    if (!items.length) return 0;
+
+    const targetIndex = Math.min(currentIndex, items.length - 1);
+
+    const targetItem = items[targetIndex];
+
+    const trackLeft = trackRef.current.getBoundingClientRect().left;
+    const itemLeft = targetItem.getBoundingClientRect().left;
+
+    return Math.max(0, itemLeft - trackLeft);
   };
 
   const handlePrevious = () => {
@@ -72,14 +86,10 @@ export function Features() {
     setCurrentIndex((previousIndex) => previousIndex + 1);
   };
 
-  const translateAmount = Math.min(
-    getTranslateAmount(),
-    maxTranslate
-  );
+  const translateAmount = Math.min(getTranslateAmount(), maxTranslate);
 
   return (
     <section className="features" id="features">
-
       <div className="features-heading">
         <div className="features-subheading">
           <p>LOVED BY BUSINESS OWNERS</p>
@@ -88,10 +98,7 @@ export function Features() {
         <h2>The perfect plan exists for your business.</h2>
       </div>
 
-      <div
-        className="features-viewport"
-        ref={sliderRef}
-      >
+      <div className="features-viewport" ref={sliderRef}>
         <div
           className="features-track"
           ref={trackRef}
@@ -99,7 +106,6 @@ export function Features() {
             transform: `translate3d(-${translateAmount}px, 0, 0)`,
           }}
         >
-
           {features.map((feature) => (
             <FeatureCard
               key={feature.id}
@@ -113,12 +119,10 @@ export function Features() {
               }}
             />
           ))}
-
         </div>
       </div>
 
       <div className="features-navigation">
-
         <button
           className="feature-btn feature-left"
           onClick={handlePrevious}
@@ -134,9 +138,7 @@ export function Features() {
         >
           {">"}
         </button>
-
       </div>
-
     </section>
   );
 }

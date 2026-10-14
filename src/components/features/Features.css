@@ -89,10 +89,11 @@
     opacity: 0.35;
 }
 
+
 .feature-slider-item {
     flex: 0 0 auto;
     display: flex;
-}
+} 
 
 
 /* ========================================
@@ -131,7 +132,7 @@
 @media (max-width: 480px) {
 
     .features {
-        padding: 0 15px;
+        padding: 0 20px;
     }
 
     .features-heading {
