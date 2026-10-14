@@ -55,6 +55,7 @@
  
 }
 
+/*
 .who-can-use-cards-viewport {
   width: 100%;
   overflow: hidden;
@@ -63,7 +64,25 @@
 
   display: flex;
   align-items: stretch;
+} */
+
+.who-can-use-cards-viewport {
+  width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  align-items: stretch;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+
+.who-can-use-cards-viewport::-webkit-scrollbar {
+  display: none;
+}
+
 
 .who-can-use-cards-track{
     display:flex;
@@ -71,7 +90,6 @@
     width:max-content;
     padding-right: 175px;
 
-    transition:transform .45s ease;
 }
 
 
