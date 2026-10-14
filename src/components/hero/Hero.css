@@ -74,18 +74,15 @@
 .hero-button {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-
-  padding: 4px;
-  border-radius: 8px;
-
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
   background: transparent;
   color: #fff;
-
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.01em;
-
   text-decoration: none;
   box-shadow: none;
 }
@@ -97,8 +94,9 @@
   box-shadow: none;
 }
 
-.hero-button:active {
-  border: 2px solid #080f1a;
+.hero-button:active .hero-button-border {
+  outline: 2px solid #080f1a;
+  outline-offset: 2px;
 }
 
 .hero-actions {
@@ -175,10 +173,10 @@
      line-height: 1.6;
   }
 
-  .hero-button {
-    width: 100%;
-    max-width: 260px;
-  }
+ .hero-button {
+  width: auto;
+  max-width: none;
+}
 
   .hero-media {
     padding: 10px;
