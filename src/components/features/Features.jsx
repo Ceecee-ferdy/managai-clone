@@ -1,4 +1,3 @@
-
 import { useRef, useState, useEffect, useCallback } from "react";
 import { FeatureCard } from "./FeatureCard";
 import { features } from "../../data/feature";
@@ -11,8 +10,6 @@ export function Features() {
   const [expandedFeatureId, setExpandedFeatureId] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [maxTranslate, setMaxTranslate] = useState(0);
-  const [isAtStart, setIsAtStart] = useState(true);
-  const [isAtEnd, setIsAtEnd] = useState(false);
 
   const getTranslateAmount = useCallback(() => {
     const track = trackRef.current;
@@ -24,10 +21,9 @@ export function Features() {
     if (!items.length) return 0;
 
     const targetIndex = Math.min(currentIndex, items.length - 1);
-    const trackRect = track.getBoundingClientRect();
-    const itemRect = items[targetIndex].getBoundingClientRect();
+    const targetItem = items[targetIndex];
 
-    return Math.max(0, itemRect.left - trackRect.left);
+    return Math.max(0, targetItem.offsetLeft);
   }, [currentIndex]);
 
   const translateAmount = Math.min(getTranslateAmount(), maxTranslate);
@@ -39,43 +35,20 @@ export function Features() {
 
       if (!viewport || !track) return;
 
-      const viewportWidth = viewport.clientWidth;
-      const trackWidth = track.scrollWidth;
-      const maximumMovement = Math.max(0, trackWidth - viewportWidth);
-
-      const items = track.querySelectorAll(".feature-slider-item");
-      const targetIndex = Math.min(currentIndex, items.length - 1);
-
-      let targetMovement = 0;
-
-      if (items.length > 0 && targetIndex >= 0) {
-        const trackRect = track.getBoundingClientRect();
-        const itemRect = items[targetIndex].getBoundingClientRect();
-
-        targetMovement = Math.max(0, itemRect.left - trackRect.left);
-      }
-
-      const clampedMovement = Math.min(targetMovement, maximumMovement);
+      const maximumMovement = Math.max(
+        0,
+        track.scrollWidth - viewport.clientWidth,
+      );
 
       setMaxTranslate(maximumMovement);
-      setIsAtStart(clampedMovement <= 2);
-      setIsAtEnd(
-        maximumMovement === 0 ||
-          clampedMovement >= maximumMovement - 2,
-      );
     };
 
     updateSlider();
 
     const resizeObserver = new ResizeObserver(updateSlider);
 
-    if (sliderRef.current) {
-      resizeObserver.observe(sliderRef.current);
-    }
-
-    if (trackRef.current) {
-      resizeObserver.observe(trackRef.current);
-    }
+    if (sliderRef.current) resizeObserver.observe(sliderRef.current);
+    if (trackRef.current) resizeObserver.observe(trackRef.current);
 
     window.addEventListener("resize", updateSlider);
 
@@ -83,22 +56,20 @@ export function Features() {
       resizeObserver.disconnect();
       window.removeEventListener("resize", updateSlider);
     };
-  }, [currentIndex, expandedFeatureId]);
+  }, [expandedFeatureId]);
+
+  const items = trackRef.current?.querySelectorAll(".feature-slider-item");
+  const maximumIndex = items?.length ? items.length - 1 : 0;
+
+  const isAtStart = currentIndex === 0;
+  const isAtEnd = maximumIndex === 0 || translateAmount >= maxTranslate - 2;
 
   const handlePrevious = () => {
-    setCurrentIndex((previousIndex) => Math.max(0, previousIndex - 1));
+    setCurrentIndex((index) => Math.max(0, index - 1));
   };
 
   const handleNext = () => {
-    const items = trackRef.current?.querySelectorAll(".feature-slider-item");
-
-    if (!items?.length) return;
-
-    const maximumIndex = items.length - 1;
-
-    setCurrentIndex((previousIndex) =>
-      Math.min(maximumIndex, previousIndex + 1),
-    );
+    setCurrentIndex((index) => Math.min(maximumIndex, index + 1));
   };
 
   return (
@@ -157,4 +128,3 @@ export function Features() {
     </section>
   );
 }
-
