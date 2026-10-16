@@ -5,7 +5,7 @@
 .features-viewport {
     width: 100%;
     min-width: 0;
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: hidden;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
