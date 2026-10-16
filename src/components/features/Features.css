@@ -151,6 +151,10 @@
         border-radius: 7px;
     }
 
+    .features-track {
+      gap: 20px;
+    }
+
     .features-heading p {
         font-size: 11px;
     }
