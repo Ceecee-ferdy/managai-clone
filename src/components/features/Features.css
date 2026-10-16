@@ -2,18 +2,24 @@
     padding: 0 35px;
 }
 
-.features-viewport {
-    width: 100%;
-    overflow: hidden;
-}
+.features-viewport { 
+    width: 100%; 
+    min-width: 0; 
+    overflow-x: auto; 
+    overflow-y: hidden; 
+    scroll-behavior: smooth; 
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; 
+} 
+.features-viewport::-webkit-scrollbar { 
+    display: none;
+ } 
 
-.features-track {
+ .features-track { 
     display: flex;
-    gap: 32px;
-    width: max-content;
-
-    transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: transform;
+    gap: 32px; 
+    width: max-content; 
 }
 
 .features-heading {
@@ -91,10 +97,10 @@
 
 
 .feature-slider-item {
-    flex: 0 0 auto;
-    display: flex;
-} 
-
+  flex: 0 0 auto;
+  display: flex;
+  scroll-snap-align: start;
+}
 
 /* ========================================
    TABLET / LARGE MOBILE

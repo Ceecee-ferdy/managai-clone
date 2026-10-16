@@ -167,7 +167,8 @@
 @media (min-width: 481px) and (max-width: 768px) {
 
     .feature-card {
-        flex-basis: 334px;
+        flex-basis: min(334px, calc(100vw - 80px));
+        box-sizing: border-box;
         padding: 24px;
         border-radius: 22px;
     }
@@ -190,9 +191,9 @@
         font-size: 13px;
     }
 
-    .feature-card-detail-wrapper {
-        flex-basis: 334px;
-
+   .feature-card-detail-wrapper {
+        flex-basis: min(334px, calc(100vw - 80px));
+        box-sizing: border-box;
         padding: 14px;
         border-radius: 22px;
     }
@@ -228,11 +229,11 @@
 @media (max-width: 480px) {
 
     .feature-card {
-        flex-basis: 334px;
-
-        padding: 20px;
-        border-radius: 18px;
-    }
+    flex-basis: min(300px, calc(100vw - 80px));
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 18px;
+}
 
     .feature-image {
         width: 48px;
@@ -262,12 +263,12 @@
         border-radius: 5px;
     }
 
-    .feature-card-detail-wrapper {
-        flex-basis: 334px;
-
-        padding: 12px;
-        border-radius: 18px;
-    }
+   .feature-card-detail-wrapper {
+    flex-basis: min(300px, calc(100vw - 80px));
+    padding: 12px;
+    border-radius: 18px;
+    box-sizing: border-box;
+}
 
     .feature-card-detail {
         min-height: 340px;
