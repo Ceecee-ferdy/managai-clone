@@ -1,11 +1,12 @@
 .feature-card {
-    flex: 0 0 334px;
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
 
     background: #fff;
-
     border: 1px solid #e5e7eb;
     border-radius: 28px;
-
     padding: 28px;
 
     display: flex;
@@ -94,6 +95,15 @@
     box-sizing: border-box;
 
     display: flex;
+}
+
+.feature-slider-item {
+    flex: 0 0 334px;
+    width: 334px;
+    min-width: 0;
+    display: flex;
+    box-sizing: border-box;
+    scroll-snap-align: start;
 }
 
 .feature-card-detail {
@@ -228,9 +238,17 @@
 
 @media (max-width: 480px) {
 
-    .feature-card {
-    flex-basis: min(300px, calc(100vw - 80px));
+ .feature-slider-item {
+    flex-basis: min(300px, calc(100vw - 30px));
+    width: min(300px, calc(100vw - 30px));
+ }
+
+.feature-card {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
     box-sizing: border-box;
+
     padding: 20px;
     border-radius: 18px;
 }
